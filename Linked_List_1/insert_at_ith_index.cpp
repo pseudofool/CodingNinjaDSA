@@ -10,7 +10,7 @@ SinglyLinkedListNode* insertNodeAtPosition(SinglyLinkedListNode* llist, int data
     int count = 0;
     SinglyLinkedListNode* temp = llist;
     // reaching just before the position index
-    while(temp->next != NULL && count < position-1){
+    while(temp != NULL && count < position-1){
         temp = temp->next;
         count++;
     }
