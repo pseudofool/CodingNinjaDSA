@@ -4,7 +4,7 @@ using namespace std;
 #include "dynamic_stack_using_array.h"
 
 int main(){
-    StackUsingArray s(3);
+    StackUsingArray s;
     cout << s.isEmpty() << endl;
     cout << s.pop() << endl;
     s.push(10);

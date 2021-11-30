@@ -4,10 +4,10 @@ class StackUsingArray{
     int nextIndex;
     int capacity;
     public:
-    StackUsingArray(int totalSize){
-        data = new int[totalSize];
+    StackUsingArray(){
+        data = new int[3];
         nextIndex = 0;
-        capacity = totalSize;
+        capacity = 3;
     }
     bool isEmpty(){
         return nextIndex == 0;
