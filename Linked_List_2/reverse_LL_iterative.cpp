@@ -4,12 +4,13 @@ Node *reverseLinkedList(Node *head) {
     }
     Node *prev = NULL;
     Node *curr = head;
-
+    Node *nxt = curr->next;
     while(curr != NULL){
-        Node *nxt = curr->next;
         curr->next = prev;
         prev = curr;
         curr = nxt;
+        if (nxt!=NULL)
+            nxt = curr->next;
     }
     return prev;
 }
