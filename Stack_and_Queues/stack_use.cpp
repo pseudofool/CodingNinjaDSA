@@ -1,19 +1,18 @@
 #include <iostream>
 
 using namespace std;
-#include "dynamic_stack_using_array.h"
+//#include "dynamic_stack_using_array.h"
+#include "stack_using_templates.h"
+
 
 int main(){
-    StackUsingArray s;
-    cout << s.isEmpty() << endl;
-    cout << s.pop() << endl;
-    s.push(10);
-    s.push(20);
-    cout << s.top() << endl;
-    s.push(30);
-    cout  << s.size() << endl;
-    s.push(40);
-    cout << s.top() << endl;
+    StackUsingArray<int> s1;
+    s1.push(10);
+    s1.push(20);
+     StackUsingArray<char> s2;
+     s2.push('a');
+     s2.push('b');
+    cout << s1.top() << " " << s2.top() << endl;
 
     
 
