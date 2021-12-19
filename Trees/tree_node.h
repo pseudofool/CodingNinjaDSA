@@ -2,10 +2,10 @@
 using namespace std;
 
 template <typename T>
-TreeNode{
+class TreeNode{
     public:
     T data;
-    vector<TreeNode<int>*>;
+    vector<TreeNode<int>*> children;
     TreeNode(T data){
         this->data = data;
     }
