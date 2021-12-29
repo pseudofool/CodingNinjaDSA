@@ -11,7 +11,7 @@ int main(){
     q.enqueue(30);
     q.enqueue(40);
     cout << q.getSize() << endl;
-    cout << q.top() << endl;
+    cout << q.front() << endl;
     q.dequeue();
     q.enqueue(50);
     q.enqueue(60);

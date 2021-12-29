@@ -19,7 +19,7 @@ class Queue{
     bool isEmpty(){
         return size == 0;
     }
-    T top(){
+    T front(){
         if (size == 0){
             cout << "Empty Queue" << endl;
             return 0;
