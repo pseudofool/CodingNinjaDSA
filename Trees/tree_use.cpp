@@ -3,6 +3,14 @@
 using namespace std;
 #include "tree_node.h"
 
+
+int numNodes(TreeNode<int>* root){
+    int count = 1;
+    for (int i=0; i<root->children.size(); i++){
+        count += numNodes(root->children[i]);
+    }
+    return count;
+}
 TreeNode<int>* takeInputLevelWise(){
     int rootData;
     cout << "Enter root data" << endl;
@@ -25,6 +33,7 @@ TreeNode<int>* takeInputLevelWise(){
             pendingNodes.push(child);
             front->children.push_back(child);
         }
+        
     }
     return root;
 
@@ -46,16 +55,21 @@ TreeNode<int>* takeInput(){
     return root;
 }
 
-void printTreeLevelWise['-[]'(TreeNode<int>* root){
+void printTreeLevelWise(TreeNode<int>* root) {
     queue<TreeNode<int>*> pendingNodes;
     pendingNodes.push(root);
     while(pendingNodes.size() != 0){
         TreeNode<int>* front = pendingNodes.front();
         pendingNodes.pop();
-        cout << front->data << ": ";
+        cout << front->data << ":";
         for (int i=0; i<front->children.size(); i++){
+            if (i == front->children.size()-1){
+                cout << front->children[i]->data;
+            }else{
+                cout << front->children[i]->data << ",";
+            }
             pendingNodes.push(front->children[i]);
-            cout << front->children[i]->data << ", ";
+
         }
         cout << endl;
     }
@@ -79,6 +93,7 @@ int main(){
     */
     TreeNode<int>* root = takeInputLevelWise();
     printTreeLevelWise(root);
+    cout << numNodes(root) << endl;
     
 
 
