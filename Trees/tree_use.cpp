@@ -46,7 +46,7 @@ TreeNode<int>* takeInput(){
     return root;
 }
 
-void printTreeLevelWise(TreeNode<int>* root){
+void printTreeLevelWise['-[]'(TreeNode<int>* root){
     queue<TreeNode<int>*> pendingNodes;
     pendingNodes.push(root);
     while(pendingNodes.size() != 0){
