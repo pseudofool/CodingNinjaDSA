@@ -2,9 +2,13 @@
 #include <queue>
 using namespace std;
 #include "tree_node.h"
+#include "preorder.cpp"
 
 
 int numNodes(TreeNode<int>* root){
+    if (root == NULL){
+        return 0;
+    }
     int count = 1;
     for (int i=0; i<root->children.size(); i++){
         count += numNodes(root->children[i]);
@@ -92,10 +96,13 @@ int main(){
     TreeNode<int>* node2 = new TreeNode<int>(3);
     */
     TreeNode<int>* root = takeInputLevelWise();
-    printTreeLevelWise(root);
-    cout << numNodes(root) << endl;
+    // printTreeLevelWise(root);
+    // cout << numNodes(root) << endl;
+    preorder(root);
     
 
 
 return 0;
 }
+
+// 1 3 2 3 4 2 5 6 2 7 8 0 0 0 0 1 9 0
