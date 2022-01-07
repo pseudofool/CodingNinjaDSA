@@ -71,9 +71,6 @@ void printTree(BinaryTreeNode<int>* root){
     printTree(root->right);
 }
 
-void printTreeLevelWise(BinaryTreeNode<int>* root){
-    
-}
 
 int main(){
     /*BinaryTreeNode<int> *root = new BinaryTreeNode<int>(1);
