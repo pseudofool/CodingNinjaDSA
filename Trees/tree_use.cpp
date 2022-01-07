@@ -99,7 +99,7 @@ int main(){
     // printTreeLevelWise(root);
     // cout << numNodes(root) << endl;
     preorder(root);
-    
+    delete root;
 
 
 return 0;
