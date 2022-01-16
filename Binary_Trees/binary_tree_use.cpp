@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#include <vector>
 #include "binary_tree_node.h"
 using namespace std;
 
@@ -101,6 +102,32 @@ int numNodes(BinaryTreeNode<int>* root){
     return 1 + numNodes(root->left) + numNodes(root->right);
 }
 
+vector<int>* getRootToNodePath(BinaryTreeNode<int>* root, int data){
+    if (root == NULL){
+        return NULL;
+    }
+    if (root->data == data){
+        vector<int>* output = new vector<int>();
+        output->push_back(root->data);
+        return output;
+    }
+
+    vector<int>* leftOutput = getRootToNodePath(root->left,data);
+    if (leftOutput != NULL){
+        leftOutput->push_back(root->data);
+        return leftOutput;
+    }
+
+    vector<int>* rightOutput = getRootToNodePath(root->right, data);
+    if (rightOutput != NULL){
+        rightOutput->push_back(root->data);
+        return rightOutput;
+    }else{
+        return NULL;
+    }
+}
+
+
 int main(){
     /*BinaryTreeNode<int> *root = new BinaryTreeNode<int>(1);
     BinaryTreeNode<int> *node1 = new BinaryTreeNode<int>(2);
@@ -109,8 +136,13 @@ int main(){
     root->right = node2;*/
     BinaryTreeNode<int> *root = takeInputLevelWise();
     // printTree(root);
-    printLevelWise(root);
-    cout << numNodes(root) << endl;
+    vector<int>* output = getRootToNodePath(root, 8);
+    // printLevelWise(root);
+    for (int i=0; i<output->size(); i++){
+        cout << output->at(i) << " ";
+    }
+
+    delete root;
 
 
     // 1 2 3 4 5 6 7 -1 -1 -1 -1 8 9 -1 -1 -1 -1 -1 -1
