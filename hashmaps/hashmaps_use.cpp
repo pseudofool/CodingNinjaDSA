@@ -29,5 +29,30 @@ int main(){
         cout << ourmap["abc"]; 
     }
 
+    // iterator
+
+    cout << endl << endl << "using iterator" << endl;
+    unordered_map<string, int> xmap;
+    xmap["abc"] = 1;
+    xmap["abc1"] = 2;
+    xmap["abc2"] = 3;
+    xmap["abc3"] = 4;
+    xmap["abc4"] = 5;
+    xmap["abc5"] = 6;
+    xmap["abc6"] = 7;
+
+    unordered_map<string, int>::iterator it;
+    it = xmap.begin();
+    while(it != xmap.end()){
+        cout << it->first << " " << it->second << endl;
+        it++;
+    }
+
+    unordered_map<string, int>::iterator it2 = xmap.find("abc");
+    cout << it2->first << " " << it2->second << endl;
+    return 0;
+
+    // erasing the map;
+    xmap.erase(it, xmap.end());
     return 0;
 }
