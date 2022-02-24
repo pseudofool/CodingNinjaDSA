@@ -48,11 +48,21 @@ int main(){
         it++;
     }
 
+    cout << endl << endl;
     unordered_map<string, int>::iterator it2 = xmap.find("abc");
     cout << it2->first << " " << it2->second << endl;
     return 0;
 
     // erasing the map;
     xmap.erase(it, xmap.end());
+
+    // iterator in vector
+    vector<int> v;
+    for (int i = 0; i<10; i++){
+        v.push_back(i+1);
+    }
+    vector<int>::iterator it3 = v.begin();
+    v.erase(it3, it3+4);
+    
     return 0;
 }
