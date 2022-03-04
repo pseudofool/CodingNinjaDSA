@@ -51,4 +51,19 @@ long staircase(int n){
     return staircase(ans, n);
 }
 
-// 
+// using DP
+
+long staircase(int n){
+    long *ans = new long[n+1];
+    ans[0] = 0;
+    ans[1] = 1;
+    ans[2] = 2;
+    for (int i=3; i<=n; i++){
+        int option1 = ans[i-1];
+        int option = ans[i-2];
+        int option3 = ans[i-3];
+
+        ans[i] = 1 + option1 + option2 + option3;
+    }
+    return ans[n];
+}
